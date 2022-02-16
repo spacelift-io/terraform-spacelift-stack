@@ -1,0 +1,7 @@
+version: "1"
+module_version: 0.0.1
+runner_image: spacelift/runner:latest
+
+tests:
+  - name: Simple Usage
+    project_root: examples/simple-usage
