@@ -15,8 +15,8 @@ terraform {
 # Update input values according to your needs
 provider "spacelift" {
   api_key_endpoint = "https://my-spacelift.app.spacelift.io"
-  api_key_id       = "your-spacelift-api-key"
-  api_key_secret   = "your-spacelift-password"
+  api_key_id       = "your-spacelift-api-key-id"
+  api_key_secret   = "your-spacelift-api-key-secret"
 }
 
 provider "aws" {
