@@ -45,7 +45,7 @@ resource "spacelift_aws_role" "this" {
     spacelift_stack.this
   ]
   stack_id = spacelift_stack.this.id
-  role_arn = var.createIamRole ? aws_iam_role.this.arn : var.executionRoleArn
+  role_arn = var.createIamRole ? aws_iam_role.this[0].arn : var.executionRoleArn
 }
 
 // Stack Policy Attachments

@@ -3,6 +3,11 @@ variable "name" {
   description = "The name of the Spacelift stack to create."
 }
 
+variable "spaceliftAccountName" {
+  type        = string
+  description = "The name of the Spacelift account you are using. (e.g. The $NAME variable of https://$NAME.app.spacelift.io)"
+}
+
 variable "repositoryName" {
   type        = string
   description = "The name of the Git repository for the stack to use."
