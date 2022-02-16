@@ -58,3 +58,15 @@ resource "spacelift_policy_attachment" "this" {
   policy_id = var.attachmentPolicyIds[count.index]
   stack_id  = spacelift_stack.this.id
 }
+
+// Stack Context Attachments
+# Attaches contexts to the stack
+resource "spacelift_context_attachment" "this" {
+  count = length(var.attachmentContextIds)
+  depends_on = [
+    spacelift_stack.this
+  ]
+  context_id = var.attachmentContextIds[count.index]
+  stack_id   = spacelift_stack.this.id
+  priority   = count.index
+}
