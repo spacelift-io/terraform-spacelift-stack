@@ -108,3 +108,9 @@ variable "attachmentPolicyIds" {
   description = "A list of policy ids to attach to the stack being created. Optional, but powerful feature of Spacelift!"
   default     = []
 }
+
+variable "attachmentContextIds" {
+  type        = list(string)
+  description = "A list of context ids to attach in priority order."
+  default     = []
+}
