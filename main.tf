@@ -2,14 +2,14 @@ resource "spacelift_stack" "this" {
   name                 = var.name
   repository           = var.repositoryName
   branch               = var.repositoryBranch
-  manage_state         = var.manage_state
+  manage_state         = var.manageState
   description          = var.description
-  terraform_version    = var.terraform_version
-  enable_local_preview = var.enable_local_preview
-  worker_pool_id       = var.worker_pool_id
+  terraform_version    = var.terraformVersion
+  enable_local_preview = var.enableLocalPreview
+  worker_pool_id       = var.workerPoolId
   administrative       = var.administrative
   autodeploy           = var.autodeploy
-  project_root         = var.project_root
+  project_root         = var.projectRoot
   labels               = var.labels
 }
 
