@@ -110,7 +110,7 @@ variable "attachmentPolicyIds" {
 }
 
 variable "attachmentContextIds" {
-  type        = list(string)
+  type        = list(any)
   description = "A list of context ids to attach in priority order."
   default     = []
 }

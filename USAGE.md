@@ -32,7 +32,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_administrative"></a> [administrative](#input\_administrative) | Whether or not the stack created should be administrative (able to manage Spacelift resources). | `bool` | `false` | no |
-| <a name="input_attachmentContextIds"></a> [attachmentContextIds](#input\_attachmentContextIds) | A list of context ids to attach in priority order. | `list(string)` | `[]` | no |
+| <a name="input_attachmentContextIds"></a> [attachmentContextIds](#input\_attachmentContextIds) | A list of context ids to attach in priority order. | `list(any)` | `[]` | no |
 | <a name="input_attachmentPolicyIds"></a> [attachmentPolicyIds](#input\_attachmentPolicyIds) | A list of policy ids to attach to the stack being created. Optional, but powerful feature of Spacelift! | `list(string)` | `[]` | no |
 | <a name="input_autodeploy"></a> [autodeploy](#input\_autodeploy) | Whether or not the Spacelift stack created should autodeploy resources without approval. | `bool` | `false` | no |
 | <a name="input_createIamRole"></a> [createIamRole](#input\_createIamRole) | Whether or not to create an IAM role for the stack to use for the AWS Integration. If false, stackAwsRoleArn must be specified for the AWS integration to be setup. | `bool` | `true` | no |
