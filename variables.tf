@@ -35,13 +35,13 @@ variable "terraform_version" {
   default     = ""
 }
 
-variable "enable_local_preview" {
+variable "enableLocalPreview" {
   type        = bool
   description = "Whether or not to enable the Spacelift CLI 'local preview' feature"
   default     = false
 }
 
-variable "worker_pool_id" {
+variable "workerPoolId" {
   type        = string
   description = "The ID of the worker pool to use for Spacelift stack runs."
   default     = ""
@@ -59,7 +59,7 @@ variable "autodeploy" {
   default     = false
 }
 
-variable "project_root" {
+variable "projectRoot" {
   type        = string
   description = "The path to your project root in your repository to use as the root of the stack. Defaults to root of the repository."
   default     = ""
