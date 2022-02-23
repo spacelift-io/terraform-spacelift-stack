@@ -41,7 +41,7 @@ No modules.
 | <a name="input_executionRoleArn"></a> [executionRoleArn](#input\_executionRoleArn) | Use this variable if you would like to specify a custom role ARN to use for your stack's AWS integration. Note: setupAwsIntegration should be true & createIamRole false when this variable is used | `string` | `""` | no |
 | <a name="input_executionRolePolicyArns"></a> [executionRolePolicyArns](#input\_executionRolePolicyArns) | A list of ARNs of IAM Policies to apply to the IAM Role that will be used by the Spacelift stack AWS integration. | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/PowerUserAccess"<br>]</pre> | no |
 | <a name="input_labels"></a> [labels](#input\_labels) | Labels to apply to the stack being created. | `list(string)` | `[]` | no |
-| <a name="input_manage_state"></a> [manage\_state](#input\_manage\_state) | Whether or not you would like Spacelift to manage the state for your stack. | `bool` | `true` | no |
+| <a name="input_manageState"></a> [manageState](#input\_manageState) | Whether or not you would like Spacelift to manage the state for your stack. | `bool` | `true` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the Spacelift stack to create. | `string` | n/a | yes |
 | <a name="input_projectRoot"></a> [projectRoot](#input\_projectRoot) | The path to your project root in your repository to use as the root of the stack. Defaults to root of the repository. | `string` | `""` | no |
 | <a name="input_repositoryBranch"></a> [repositoryBranch](#input\_repositoryBranch) | The name of the branch to use for the specified Git repository. | `string` | n/a | yes |
@@ -49,7 +49,7 @@ No modules.
 | <a name="input_setupAwsIntegration"></a> [setupAwsIntegration](#input\_setupAwsIntegration) | Whether or not to setup the AWS integration for the Spacelift stack being created. | `bool` | `true` | no |
 | <a name="input_spaceliftAccountName"></a> [spaceliftAccountName](#input\_spaceliftAccountName) | The name of the Spacelift account you are using. (e.g. The $NAME variable of https://$NAME.app.spacelift.io) | `string` | n/a | yes |
 | <a name="input_spaceliftAwsAccountId"></a> [spaceliftAwsAccountId](#input\_spaceliftAwsAccountId) | The ID of Spacelift's AWS account. | `string` | `"324880187172"` | no |
-| <a name="input_terraform_version"></a> [terraform\_version](#input\_terraform\_version) | The version of Terraform for your stack to use. Defaults to latest. | `string` | `""` | no |
+| <a name="input_terraformVersion"></a> [terraformVersion](#input\_terraformVersion) | The version of Terraform for your stack to use. Defaults to latest. | `string` | `""` | no |
 | <a name="input_workerPoolId"></a> [workerPoolId](#input\_workerPoolId) | The ID of the worker pool to use for Spacelift stack runs. | `string` | `""` | no |
 
 ## Outputs

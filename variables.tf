@@ -18,7 +18,7 @@ variable "repositoryBranch" {
   description = "The name of the branch to use for the specified Git repository."
 }
 
-variable "manage_state" {
+variable "manageState" {
   type        = bool
   description = "Whether or not you would like Spacelift to manage the state for your stack."
   default     = true
@@ -29,7 +29,7 @@ variable "description" {
   description = "A description to describe your Spacelift stack."
 }
 
-variable "terraform_version" {
+variable "terraformVersion" {
   type        = string
   description = "The version of Terraform for your stack to use. Defaults to latest."
   default     = ""
