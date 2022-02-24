@@ -17,8 +17,8 @@ resource "spacelift_stack" "this" {
 resource "spacelift_stack_destructor" "this" {
   depends_on = [
     spacelift_stack.this,
-    spacelift_context_attachment,
-    spacelift_policy_attachment
+    spacelift_context_attachment.this,
+    spacelift_policy_attachment.this
   ]
   stack_id = spacelift_stack.this.id
 }
