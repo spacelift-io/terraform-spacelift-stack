@@ -13,6 +13,16 @@ resource "spacelift_stack" "this" {
   labels               = var.labels
 }
 
+# Used to trigger the deletion of resources when a stack is destroyed
+resource "spacelift_stack_destructor" "this" {
+  stack_id = spacelift_stack.this.id
+}
+
+# Triggers the stack after creation
+resource "spacelift_run" "this" {
+  stack_id = spacelift_stack.this.id
+}
+
 // IAM Role to allow stacks to deploy resources on AWS
 resource "aws_iam_role" "this" {
   count               = var.createIamRole ? 1 : 0
