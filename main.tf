@@ -15,6 +15,11 @@ resource "spacelift_stack" "this" {
 
 # Used to trigger the deletion of resources when a stack is destroyed
 resource "spacelift_stack_destructor" "this" {
+  depends_on = [
+    spacelift_stack.this,
+    spacelift_context_attachment[*],
+    spacelift_policy_attachment[*]
+  ]
   stack_id = spacelift_stack.this.id
 }
 
