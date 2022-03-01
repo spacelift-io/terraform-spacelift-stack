@@ -29,8 +29,8 @@ module "stack" {
   source = "../../"
 
   name                 = "example-stack"
-  spaceliftAccountName = "my-spacelift"
-  repositoryName       = "your-stack-repo"
-  repositoryBranch     = "main"
+  spacelift_account_name = "my-spacelift"
+  repository_name       = "your-stack-repo"
+  repository_branch     = "main"
   description          = "This is an example stack."
 }
