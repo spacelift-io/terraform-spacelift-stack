@@ -12,7 +12,7 @@ resource "spacelift_stack" "this" {
   project_root         = var.project_root
   labels               = var.labels
   runner_image         = var.runner_image
-  autotry              = var.autoretry
+  autoretry            = var.autoretry
   before_apply         = var.before_apply
   before_destroy       = var.before_destroy
   before_init          = var.before_init
