@@ -11,6 +11,18 @@ resource "spacelift_stack" "this" {
   autodeploy           = var.autodeploy
   project_root         = var.project_root
   labels               = var.labels
+  runner_image         = var.runner_image
+  autoretry            = var.autoretry
+  before_apply         = var.before_apply
+  before_destroy       = var.before_destroy
+  before_init          = var.before_init
+  before_perform       = var.before_perform
+  before_plan          = var.before_plan
+  after_apply          = var.after_apply
+  after_destroy        = var.after_destroy
+  after_init           = var.after_init
+  after_perform        = var.after_perform
+  after_plan           = var.after_plan
 }
 
 # Used to trigger the deletion of resources when a stack is destroyed
