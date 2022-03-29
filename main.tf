@@ -23,6 +23,13 @@ resource "spacelift_stack" "this" {
   after_init           = var.after_init
   after_perform        = var.after_perform
   after_plan           = var.after_plan
+
+  dynamic "github_enterprise" {
+    for_each = var.github_organization == null ? [] : [true]
+    content {
+      namespace = var.github_organization
+    }
+  }
 }
 
 # Used to trigger the deletion of resources when a stack is destroyed
