@@ -186,3 +186,9 @@ variable "after_plan" {
   description = "List of after-plan scripts."
   default     = []
 }
+
+variable "github_organization" {
+  type        = string
+  description = "For GitHub Enterprise VCS users, use this variable to specify the name of your GitHub Organization."
+  default     = ""
+}

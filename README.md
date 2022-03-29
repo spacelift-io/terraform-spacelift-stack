@@ -52,6 +52,7 @@ No modules.
 | <a name="input_enable_local_preview"></a> [enable\_local\_preview](#input\_enable\_local\_preview) | Whether or not to enable the Spacelift CLI 'local preview' feature | `bool` | `false` | no |
 | <a name="input_execution_role_arn"></a> [execution\_role\_arn](#input\_execution\_role\_arn) | Use this variable if you would like to specify a custom role ARN to use for your stack's AWS integration. Note: setup\_aws\_integration should be true & create\_iam\_role false when this variable is used | `string` | `""` | no |
 | <a name="input_execution_role_policy_arns"></a> [execution\_role\_policy\_arns](#input\_execution\_role\_policy\_arns) | A list of ARNs of IAM Policies to apply to the IAM Role that will be used by the Spacelift stack AWS integration. | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/PowerUserAccess"<br>]</pre> | no |
+| <a name="input_github_organization"></a> [github\_organization](#input\_github\_organization) | For GitHub Enterprise VCS users, use this variable to specify the name of your GitHub Organization. | `string` | `""` | no |
 | <a name="input_labels"></a> [labels](#input\_labels) | Labels to apply to the stack being created. | `list(string)` | `[]` | no |
 | <a name="input_manage_state"></a> [manage\_state](#input\_manage\_state) | Whether or not you would like Spacelift to manage the state for your stack. | `bool` | `true` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the Spacelift stack to create. | `string` | n/a | yes |
