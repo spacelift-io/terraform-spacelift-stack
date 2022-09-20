@@ -47,6 +47,9 @@ resource "spacelift_run" "this" {
   stack_id = spacelift_stack.this.id
 }
 
+locals {
+  external_id = "${var.spacelift_account_name}@${var.name}"
+}
 // IAM Role to allow stacks to deploy resources on AWS
 resource "aws_iam_role" "this" {
   count               = var.create_iam_role ? 1 : 0
@@ -59,7 +62,7 @@ resource "aws_iam_role" "this" {
         "Action" : "sts:AssumeRole",
         "Condition" : {
           "StringEquals" : {
-            "sts:ExternalId" : "${var.spacelift_account_name}@${var.name}"
+            "sts:ExternalId" : "${local.external_id}"
           }
         },
         "Effect" : "Allow",
@@ -78,8 +81,9 @@ resource "spacelift_aws_role" "this" {
   depends_on = [
     spacelift_stack.this
   ]
-  stack_id = spacelift_stack.this.id
-  role_arn = var.create_iam_role ? aws_iam_role.this[0].arn : var.execution_role_arn
+  external_id = var.create_iam_role ? local.external_id : var.execution_role_external_id
+  stack_id    = spacelift_stack.this.id
+  role_arn    = var.create_iam_role ? aws_iam_role.this[0].arn : var.execution_role_arn
 }
 
 // Stack Policy Attachments

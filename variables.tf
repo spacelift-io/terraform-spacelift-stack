@@ -103,6 +103,12 @@ variable "execution_role_arn" {
   default     = ""
 }
 
+variable "execution_role_external_id" {
+  type        = string
+  description = "Use this variable if you would like to specify a custom external ID to use for your stack's AWS integration. Note: setup_aws_integration should be true & create_iam_role false when this variable is used"
+  default     = ""
+}
+
 variable "attachment_policy_ids" {
   type        = list(string)
   description = "A list of policy ids to attach to the stack being created. Optional, but powerful feature of Spacelift!"
