@@ -25,7 +25,7 @@ resource "spacelift_stack" "this" {
   after_plan           = var.after_plan
 
   dynamic "github_enterprise" {
-    for_each = var.github_organization == null ? [] : [true]
+    for_each = length(var.github_organization) == 0 ? [] : [true]
     content {
       namespace = var.github_organization
     }
@@ -85,7 +85,7 @@ resource "spacelift_aws_role" "this" {
 // Stack Policy Attachments
 # Attaches policies to the stack
 resource "spacelift_policy_attachment" "this" {
-  count = length(var.attachment_policy_ids)
+  count     = length(var.attachment_policy_ids)
   policy_id = var.attachment_policy_ids[count.index]
   stack_id  = spacelift_stack.this.id
 }
@@ -93,7 +93,7 @@ resource "spacelift_policy_attachment" "this" {
 // Stack Context Attachments
 # Attaches contexts to the stack
 resource "spacelift_context_attachment" "this" {
-  count = length(var.attachment_context_ids)
+  count      = length(var.attachment_context_ids)
   context_id = var.attachment_context_ids[count.index]
   stack_id   = spacelift_stack.this.id
   priority   = count.index
